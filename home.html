@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>News Headline Generation</title>
+<style> 
+body {
+   background-image: url("/static/images/home.jpeg");
+      }
+</style>
+</head>
+
+ 
+
+<body>
+<center>
+<h1 style="color:white"> HEADLINE GENERATION </h1>
+</center>
+
+<div class="ml-container">
+<form action="{{url_for('predict')}}" method="POST">
+
+
+<center><h2> <p style="color:white">Selected news report:</p<h2></center>
+<center>
+<textarea rows="20" cols="100" >
+{{article}}
+</textarea>
+</center>
+<br/>
+<br/><center>
+<input type="submit" class="btn_info" color="green" value="PREDICT">
+
+</header>
+</header>
+<p style="color:white;font-size:40;text-align: center;"><b> GENERATED HEADLINE</b>
+</p>
+<div class="results"><p style="color:white;font-size:30;text-align:center;">{{ summary }}
+</div>
+</center>
+</form>
+
+</div>
+
+</body>
+</html>

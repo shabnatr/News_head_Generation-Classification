@@ -1,0 +1,123 @@
+<!DOCTYPE html><html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+     
+<style type="text/css">
+
+    *{
+        margin:0px;
+        padding:0px;
+        box-sizing:border-box;
+        outline:none;
+    }
+    body {
+       /* background: #f2f2f2;*/
+        background-image: url('/static/images/1.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+       }
+
+    .header {
+        padding:100px 0px;
+        font-size: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /*Resize the wrap to see the search bar change!*/
+    .wrap {
+        position:absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background:rgba(0,0,0,0.1);
+        max-width:400px;
+        width:100%;
+        padding:15px;
+        display:flex;
+        justify-content:space-between;
+    }
+    
+   .wrap .searchTerm {
+        width: 85%;
+        padding: 15px 20px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #0bcbc5;
+        font-size: 30px;
+        border:1px solid #0bcbc5;
+        
+    }
+
+
+        .searchTerm:focus {
+            color: #0bcbc5;
+        }
+
+    .searchButton {
+        width: 10%;
+        position: relative;
+        background: #0bcbc5;
+        text-align: center;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px;
+        font-size: 30px;
+    }
+
+        .searchButton .fa {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 25px;
+        }
+.boxed {
+  border: 1px solid green;
+  font-size: 25px;
+  background:white;
+  
+  
+}
+
+</style>
+<head>
+  <link rel="stylesheet" href="/static/main.css">
+</head>
+
+
+
+<body>
+
+<form action="{{url_for('predict')}}" method="POST">
+ <div class="header">
+                <h1 align="center">News Headline Classification</h1>
+            </div>
+<div class="wrap">
+                <b><textarea rows="5",cols="">{{ tit }}</textarea></b>
+                 <button class="searchButton">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+            </div>
+<br/>
+<br/><br/>
+<br/>
+<div class="boxed">
+  
+<h1>The news belongs to class: <br/>
+<b style="color:#00bfff">{{ val }}</b></h1> 
+</div>  
+
+</form>
+
+
+</div>
+
+</body>
+</html>
